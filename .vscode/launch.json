@@ -10,6 +10,13 @@
       "name": "Launch First App",
       "skipFiles": ["<node_internals>/**"],
       "program": "${workspaceFolder}\\first-app.mjs"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Address Book",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}\\address-book\\app.js"
     }
   ]
 }

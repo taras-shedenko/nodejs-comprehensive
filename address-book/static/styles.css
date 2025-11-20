@@ -1,0 +1,15 @@
+table {
+  border-spacing: 0;
+}
+tr:first-child th {
+  font-weight: bold;
+  text-align: left;
+}
+tr:nth-child(2n + 1) td {
+  background-color: lightgray;
+}
+
+img {
+  width: 32px;
+  height: 32px;
+}
