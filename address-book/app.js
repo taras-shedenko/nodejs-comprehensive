@@ -1,4 +1,5 @@
-import { createSecureServer } from "http2";
+import { Server } from "http";
+// import { createSecureServer } from "http2";
 import { readFileSync, readFile } from "fs";
 import { join } from "path";
 import formidable from "formidable";
@@ -13,7 +14,7 @@ const serverOptions = {
   allowHTTP1: true,
 };
 
-createSecureServer(serverOptions, (req, res) => {
+const requestHandler = (req, res) => {
   if (req.url === "/styles.css") {
     readFile(
       join(import.meta.dirname, "static", "styles.css"),
@@ -68,6 +69,12 @@ createSecureServer(serverOptions, (req, res) => {
     res.writeHead(200, { "content-type": "text/html" });
     res.end(getList());
   }
-}).listen(3000, () => {
-  console.log("Server is listening to 3000");
-});
+};
+
+const server = new Server();
+server.on("request", requestHandler);
+server.listen(3000, () => console.log("Server is listening to 3000"));
+
+// createSecureServer(serverOptions, requestHandler).listen(3000, () =>
+//   console.log("Server is listening to 3000")
+// );

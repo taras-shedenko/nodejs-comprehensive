@@ -1,0 +1,10 @@
+services:
+  redis:
+    image: redis
+    restart: always
+    volumes:
+      - movie-db:/data
+    ports:
+      - 6379:6379
+volumes:
+  movie-db:

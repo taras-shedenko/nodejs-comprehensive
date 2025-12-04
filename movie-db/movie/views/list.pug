@@ -1,0 +1,16 @@
+extends base
+include ./list-item
+block content
+  body
+    table
+      thead
+        tr
+          th ID
+          th Title
+          th Year
+          th Edit
+          th Delete
+      each movie in movies
+        +listItem(movie)
+    a(href="/movie/form/") new
+    p(style="color:red; position:absolute; right:0; bottom:0; margin:8px") pug

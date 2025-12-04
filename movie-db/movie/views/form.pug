@@ -1,0 +1,13 @@
+extends base
+block content
+  body
+    form(action="/movie/save" method="POST")
+      input(type="hidden" name="id" value=movie.id)
+      div
+        label(for="title") Title: 
+        input#title(type="text" name="title" value=movie.title)
+      div
+        label(for="year") Year: 
+        input#year(type="text" name="year" value=movie.year)
+      input(type="submit" value="Save")
+    p(style="color:red; position:absolute; right:0; bottom:0; margin:8px") pug

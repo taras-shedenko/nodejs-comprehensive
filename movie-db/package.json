@@ -1,0 +1,37 @@
+{
+  "name": "movie-db",
+  "version": "1.0.0",
+  "description": "Movie Database from Node.js: The Comprehensive Guide",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "start:pug": "cross-env TEMPLATE=pug nodemon -e js,pug app.js",
+    "start:hbs": "cross-env TEMPLATE=hbs nodemon -e js,hbs app.js",
+    "start:sqlite": "cross-env MODEL=sqlite nodemon app.js",
+    "start:mysql": "cross-env MODEL=mysql nodemon app.js",
+    "start:sequelize": "cross-env MODEL=sequelize nodemon app.js",
+    "start:redis": "cross-env MODEL=redis nodemon app.js",
+    "start:mongodb": "cross-env MODEL=mongodb nodemon app.js",
+    "start:auth": "cross-env MODEL=mysql auth=true nodemon --inspect app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-ensure-login": "^0.1.1",
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.4",
+    "express-session": "^1.18.2",
+    "mongodb": "^7.0.0",
+    "morgan": "^1.10.1",
+    "mysql2": "^3.15.3",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.3",
+    "redis": "^5.10.0",
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}

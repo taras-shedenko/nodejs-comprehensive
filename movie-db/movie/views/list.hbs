@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Movies</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Title</th><th>Year</th><th>Edit</th><th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each movies}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.title}}</td>
+            <td>{{this.year}}</td>
+            <td><a href="/movie/form/{{this.id}}">edit</a></td>
+            <td><a href="/movie/delete/{{this.id}}">delete</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <a href="/movie/form">new</a>
+    <p
+      style="color:red; position:absolute; right:0; bottom:0; margin:8px"
+    >handlebars</p>
+  </body>
+</html>
