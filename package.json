@@ -12,7 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "debug": "^4.4.3"
+    "debug": "^4.4.3",
+    "jsontoxml": "^1.0.1"
   },
   "devDependencies": {
     "cross-env": "^10.1.0"
