@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title Node.js Chat
+    body
+      a(href="/logout") Logout
+      div
+        textarea#messages(style="width:220px;height:400px")
+      div
+        input#name(type="hidden" value=user)
+        input#msg(type="text")
+        button#sendBtn Send
+      script.
+        const name = document.querySelector('#name').value
+        const socket = new WebSocket('ws://localhost:3030');
+        socket.onopen = () => socket.send(`${name} joined`);
+        document.querySelector('#sendBtn').addEventListener('click', (event)=>{
+            event.preventDefault();
+            const msg = document.querySelector('#msg').value
+            socket.send(`${name}: ${msg}`);
+            document.querySelector('#msg').value = ''
+        })
+        socket.onmessage = async (msg) => {
+            const text = await msg.data.text();
+            document.querySelector('#messages').value += `${text}\n` 
+        }
