@@ -1,5 +1,7 @@
 node_modules
-*.log
+dist
 *.cert
 *.key
 *.db
+*.env
+*.log
